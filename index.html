@@ -396,6 +396,15 @@
       <div class="tile"><strong id="minutes">00</strong><span>min</span></div>
       <div class="tile"><strong id="seconds">00</strong><span>seg</span></div>
     </div>
+    <!-- Adicione este bloco logo abaixo do cronômetro existente -->
+    <div class="countdown" id="lifeCountdown" aria-live="polite" style="margin-top:18px;">
+      <div class="tile"><strong id="lifeYears">00</strong><span>anos</span></div>
+      <div class="tile"><strong id="lifeMonths">00</strong><span>meses</span></div>
+      <div class="tile"><strong id="lifeDays">00</strong><span>dias</span></div>
+      <div class="tile"><strong id="lifeHours">00</strong><span>horas</span></div>
+      <div class="tile"><strong id="lifeMinutes">00</strong><span>min</span></div>
+      <div class="tile"><strong id="lifeSeconds">00</strong><span>seg</span></div>
+    </div>
   </header>
 
   <main class="container">
@@ -531,11 +540,11 @@ Marcos 💗`,
 
       ],
       songs: [
-        './musica1.mp3',
-        './musica2.mp3',
-        './musica3.mp3',
-        './musica4.mp3',
-        './musica5.mp3'
+        './musica/musica1.mp3',
+        './musica/musica2.mp3',
+        './musica/musica3.mp3',
+        './musica/musica4.mp3',
+        './musica/musica5.mp3'
       ],
     };
 
@@ -546,6 +555,17 @@ Marcos 💗`,
 
     // Countdown
     const el = { d: document.getElementById('days'), h: document.getElementById('hours'), m: document.getElementById('minutes'), s: document.getElementById('seconds') };
+
+    // Novo cronômetro de vida
+    const lifeEl = {
+      y: document.getElementById('lifeYears'),
+      mo: document.getElementById('lifeMonths'),
+      d: document.getElementById('lifeDays'),
+      h: document.getElementById('lifeHours'),
+      m: document.getElementById('lifeMinutes'),
+      s: document.getElementById('lifeSeconds')
+    };
+
     function updateCountdown() {
       const now = new Date();
       const target = new Date(data.targetDate);
@@ -559,6 +579,37 @@ Marcos 💗`,
       el.h.textContent = String(hours).padStart(2, '0');
       el.m.textContent = String(minutes).padStart(2, '0');
       el.s.textContent = String(seconds).padStart(2, '0');
+
+      // Atualiza o cronômetro de vida
+      const birth = new Date('2006-08-19T13:00:00-04:00');
+      let lifeDiff = now - birth;
+      if (lifeDiff < 0) lifeDiff = 0;
+
+      // Calcula anos, meses, dias, horas, minutos, segundos
+      let years = now.getFullYear() - birth.getFullYear();
+      let months = now.getMonth() - birth.getMonth();
+      let lifeDays = now.getDate() - birth.getDate();
+      let lifeHours = now.getHours() - birth.getHours();
+      let lifeMinutes = now.getMinutes() - birth.getMinutes();
+      let lifeSeconds = now.getSeconds() - birth.getSeconds();
+
+      if (lifeSeconds < 0) { lifeSeconds += 60; lifeMinutes--; }
+      if (lifeMinutes < 0) { lifeMinutes += 60; lifeHours--; }
+      if (lifeHours < 0) { lifeHours += 24; lifeDays--; }
+      if (lifeDays < 0) {
+        // Pega o último mês
+        const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        lifeDays += prevMonth.getDate();
+        months--;
+      }
+      if (months < 0) { months += 12; years--; }
+
+      lifeEl.y.textContent = String(years).padStart(2, '0');
+      lifeEl.mo.textContent = String(months).padStart(2, '0');
+      lifeEl.d.textContent = String(lifeDays).padStart(2, '0');
+      lifeEl.h.textContent = String(lifeHours).padStart(2, '0');
+      lifeEl.m.textContent = String(lifeMinutes).padStart(2, '0');
+      lifeEl.s.textContent = String(lifeSeconds).padStart(2, '0');
     }
     updateCountdown();
     setInterval(updateCountdown, 1000);
