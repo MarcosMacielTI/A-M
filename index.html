@@ -457,12 +457,24 @@
         { date: '30/06/2025', title: 'Aquela viagem', text: 'Fotos, stories e lembranças que vão ficar pra sempre.' },
       ],
       gallery: [
-        { src: './img/1.png', alt: 'bebe', caption: 'Você é meu bebê favorito.' },
-        { src: './img/2.png', alt: 'Um pôr do sol inesquecível', caption: 'Aquele pôr do sol que ficou na memória.' },
-        { src: './img/3.png', alt: 'Nosso lanche favorito', caption: 'Nada melhor que dividir um lanche com você.' },
-        { src: './img/4.png', alt: 'Passeio de domingo', caption: 'Domingos são especiais ao seu lado.' },
-        { src: './img/5.png', alt: 'Olhares que dizem tudo', caption: 'Seu olhar fala mais que mil palavras.' },
-        { src: './img/6.png', alt: 'A viagem dos sonhos', caption: 'Nossa viagem, nossos sonhos juntos.' },
+        { src: './img/1.png', alt: 'bebe', caption: 'Bebê - “O começo de uma história linda 💖”' },
+        { src: './img/2.png', alt: 'Infância', caption: 'Infância - “A menina mais doce e cheia de sonhos ✨”' },
+        { src: './img/3.png', alt: 'Infância', caption: 'Infância - “A menina com a fantasia da malevola ✨”' },
+        { src: './img/4.png', alt: 'Infância', caption: 'Infância com os irmãos - “Brincando e aprontando com Adelson e Alexia 😄”' },
+        { src: './img/5.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
+        { video: './video/6.mp4', alt: 'violonista', caption: '“A pequena artista que já tocava não só o violão, mas também o meu coração 🎶❤️”' },
+        { video: './video/7.mp4', alt: 'Amizades de 3 pessoas', caption: '“De uma amizade de três… nasceu uma história única entre nós dois 💖' },
+        { video: './video/8.mp4', alt: 'Amizades de 3 pessoas', caption: '“Entre risos e amizades, o destino me presenteou com você ❤️”' },
+        { src: './img/9.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
+        { src: './img/10.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
+        { src: './img/11.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
+        { src: './img/12.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
+        { src: './img/13.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
+        { src: './img/14.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
+        { src: './img/15.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
+        { src: './img/13.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
+
+
       ],
     };
 
@@ -506,16 +518,33 @@
 
     // Gallery render + lightbox
     const g = document.getElementById('gallery');
+
+    // Adiciona o tema antes da primeira imagem
+    const tema = document.createElement('div');
+    tema.style.gridColumn = 'span 12';
+    tema.style.textAlign = 'center';
+    tema.style.fontSize = '1.5em';
+    tema.style.fontWeight = 'bold';
+    tema.style.marginBottom = '12px';
+    tema.textContent = 'Sua história da vida';
+    g.appendChild(tema);
+
     data.gallery.forEach(photo => {
       const item = document.createElement('div');
       item.className = 'g-item';
       item.innerHTML = `
     <div class="card">
-      <img src="${photo.src}" alt="${photo.alt}">
+      ${photo.video
+          ? `<video src="${photo.video}" controls style="width:100%;border-radius:18px;"></video>`
+          : `<img src="${photo.src}" alt="${photo.alt}">`
+        }
       <div class="g-caption">${photo.caption || photo.alt}</div>
     </div>
   `;
-      item.addEventListener('click', () => openModal(photo.src, photo.alt));
+      item.addEventListener('click', () => {
+        if (photo.video) return; // Não abre modal para vídeo
+        openModal(photo.src, photo.alt);
+      });
       g.appendChild(item);
     });
 
