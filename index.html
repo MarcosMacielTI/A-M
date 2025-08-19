@@ -446,35 +446,85 @@
     // ======= PERSONALIZE AQUI =======
     const data = {
       herName: 'Meu Amor',
-      // Use o fuso de Manaus (-04:00). Se for para 2026, troque o ano.
       targetDate: '2025-08-19T00:00:00-04:00',
-      songSrc: './sua-musica.mp3', // coloque seu arquivo na mesma pasta.
+      songs: [
+        './musica/musica1.mp3',
+        './musica/musica2.mp3',
+        './musica/musica3.mp3',
+        './musica/musica4.mp3',
+        './musica/musica5.mp3'
+      ],
       letter: `Hoje celebramos você e tudo que vivemos até aqui.\n\nObrigado por cada sorriso, cada abraço e cada momento simples que se torna gigante quando estou ao seu lado. Que este novo ciclo seja leve, lindo e cheio de sonhos realizados. Eu te amo. 💖`,
       timeline: [
-        { date: '19/08/2024', title: 'Seu dia especial', text: 'A gente celebrou do nosso jeitinho, com risada e muito afeto.' },
-        { date: '10/11/2024', title: 'Primeiro rolê só nosso', text: 'Descobrimos nosso lanche favorito e um pôr do sol perfeito.' },
-        { date: '14/02/2025', title: 'Nosso momento', text: 'Promessa de seguir lado a lado, cuidando um do outro.' },
-        { date: '30/06/2025', title: 'Aquela viagem', text: 'Fotos, stories e lembranças que vão ficar pra sempre.' },
+        { date: '19/08/2006', title: 'O dia que ela nasceu', text: 'O início de uma história linda, marcada pela chegada de alguém que, mesmo sem saber, já transformava o mundo ao seu redor com luz e amor.' },
+        { date: '31/01/2025', title: 'Dia da formatura', text: 'Um momento de conquista e superação, celebrado com orgulho, risadas e muito carinho, mostrando o quanto ela é capaz de realizar seus sonhos.' },
+        { date: '10/03/2025', title: 'Primeiro dia na faculdade', text: 'Um novo capítulo cheio de expectativas, aprendizados e promessas de sempre caminharmos juntos, apoiando e cuidando um do outro em cada desafio.' },
+        { date: '19/08/2025', title: 'Hoje é o grande dia: aniversário dela', text: 'Mais um ano de vida, mais um capítulo cheio de lembranças especiais, risadas, fotos e histórias que ficarão guardadas para sempre no coração.' },
+
       ],
       gallery: [
         { src: './img/1.png', alt: 'bebe', caption: 'Bebê - “O começo de uma história linda 💖”' },
+        { src: './img/2.2.png', alt: 'Infância', caption: '' },
         { src: './img/2.png', alt: 'Infância', caption: 'Infância - “A menina mais doce e cheia de sonhos ✨”' },
         { src: './img/3.png', alt: 'Infância', caption: 'Infância - “A menina com a fantasia da malevola ✨”' },
         { src: './img/4.png', alt: 'Infância', caption: 'Infância com os irmãos - “Brincando e aprontando com Adelson e Alexia 😄”' },
         { src: './img/5.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
-        { video: './video/6.mp4', alt: 'violonista', caption: '“A pequena artista que já tocava não só o violão, mas também o meu coração 🎶❤️”' },
+        { video: './video/6.mp4', alt: 'violonista', caption: '“Ela toca violão e meu coração… só que nem sempre no tom certo 🎶💔🤣”' },
         { video: './video/7.mp4', alt: 'Amizades de 3 pessoas', caption: '“De uma amizade de três… nasceu uma história única entre nós dois 💖' },
         { video: './video/8.mp4', alt: 'Amizades de 3 pessoas', caption: '“Entre risos e amizades, o destino me presenteou com você ❤️”' },
-        { src: './img/9.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
-        { src: './img/10.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
-        { src: './img/11.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
-        { src: './img/12.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
-        { src: './img/13.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
-        { src: './img/14.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
-        { src: './img/15.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
-        { src: './img/13.png', alt: 'Adolescência', caption: 'Adolescência - “Crescendo, aprendendo e criando memórias inesquecíveis com a família 🌟”' },
+        { src: './img/9.png', alt: 'Amizade de A*M', caption: '“Antes de tudo acontecer, eu nem imaginava que você se tornaria o amor da minha vida 💖”' },
+        { src: './img/10.png', alt: 'Amizade de A*M', caption: '“No começo era só amizade, mas o meu coração já sabia que tinha algo a mais ✨”' },
+        { src: './img/11.png', alt: 'Amizade de A*M', caption: '“E quando menos esperávamos… começou a nossa história de amor ❤️”' },
+        { src: './img/12.png', alt: 'Começo de A*M', caption: '“O dia que tudo mudou: a amizade virou amor ❤️”' },
+        { src: './img/13.png', alt: 'Começo de A*M', caption: '“Nosso começo foi simples, mas cheio de sentimentos verdadeiros 🌹”' },
+        { src: './img/14.png', alt: 'comendo', caption: '“Comendo? Parece que não vê comida há três dias 😂❤️”' },
+        { src: './img/15.png', alt: 'dormindo', caption: '“Dormindo? Se roncasse dava até pra gravar um remix 🎶🤣”' },
+        { src: './img/16.png', alt: 'A*M', caption: '“Você é o melhor capítulo da minha vida 💖”' },
+        { src: './img/17.png', alt: 'A*M', caption: '“Meu lugar favorito sempre vai ser ao seu lado 🌹”' },
+        { src: './img/18.png', alt: 'A*M', caption: '“Com você, até os dias comuns se tornam especiais ✨”' },
+        { src: './img/19.png', alt: 'A*M', caption: '“Te amar é a parte mais bonita da minha rotina 💕”' },
+        { src: './img/20.1.png', alt: 'A*M', caption: '' },
+        { src: './img/20.png', alt: 'A*M', caption: '“Se eu pudesse escolher de novo, escolheria você todas as vezes 🌎”' },
+
+        { src: './img/21.png', alt: 'A*M', caption: '♟️ “No xadrez e na vida, você sempre me inspira a superar cada desafio.”' },
+        { src: './img/22.png', alt: 'A*M', caption: '🌅 “Um dos nossos primeiros passeios… e já parecia que eu te conhecia desde sempre.”' },
+        { src: './img/23.png', alt: 'A*M', caption: '💼 “No estágio, eu percebi o quanto era bom ter você comigo em cada passo.”' },
+        { src: './img/24.png', alt: 'A*M', caption: '✨ “Te ver dedicada no projeto do estágio me fazia admirar ainda mais sua força.”' },
+        { src: './img/25.png', alt: 'A*M', caption: '🌹 “Enquanto você trabalhava, eu só pensava: que orgulho da mulher incrível que tenho.”' },
+        { src: './img/26.png', alt: 'A*M', caption: '💖 “No seu foco e esforço, eu sempre enxerguei o brilho do seu futuro.”' },
+        { src: './img/27.png', alt: 'A*M', caption: '🌟 “Cada conquista sua era também a minha felicidade.”' },
+        { src: './img/28.png', alt: 'A*M', caption: '🖥️ “Nosso primeiro projeto técnico juntos: parecíamos uma dupla incrível desde o começo  ”' },
+        { src: './img/29.png', alt: 'A*M', caption: '💕 “Mais que um projeto, foi a prova de que juntos podemos tudo.”' },
+        { src: './img/30.png', alt: 'A*M', caption: '📘 “No Senac, entre estudos e risadas, eu só confirmava: era você quem eu queria.”' },
+        { src: './img/31.png', alt: 'A*M', caption: '🛒 “Na Bemol, trabalhando ao seu lado, vi que até no corre você continua sendo meu porto seguro.”' },
+        { src: './img/32.png', alt: 'A*M', caption: '💼 “Entre prateleiras e clientes, a melhor parte sempre foi dividir o dia com você.”' },
+        { src: './img/33.png', alt: 'A*M', caption: '🌎 “Com você, até o trabalho vira leveza e alegria.”' },
+        { src: './img/34.png', alt: 'A*M', caption: '❤️ “E não importa onde estejamos, meu lugar favorito será sempre ao seu lado.”' },
+                
+        { src: './img/34.1.png', alt: 'A*M', caption: '💖 “A formatura marca o começo de um futuro cheio de possibilidades para você.”' },
+        { src: './img/34.2.png', alt: 'A*M', caption: '🌟 “Essa conquista é só o início de tudo de incrível que ainda está por vir na sua vida.”' },
+        { video: './video/34.3.mp4', alt: 'violonista', caption: '🌹 “Com esse sorriso e esse brilho, qualquer look se torna inesquecível 💖”' },
+
+        { src: './img/35.png', alt: 'A*M', caption: '' },
+        { src: './img/36.png', alt: 'A*M', caption: '🌟 “Mesmo aparecendo uma velha na foto, você continua a pessoa mais linda do mundo.”' },
+        { src: './img/37.png', alt: 'A*M', caption: '✨ “Com esse sorriso, você ilumina qualquer lugar que entra.”' },
+        { src: './img/38.png', alt: 'A*M', caption: '💃 “Elegante e confiante, você transforma qualquer momento em inesquecível.”' },
+        { src: './img/39.png', alt: 'A*M', caption: '🌹 “A cada foto, sua beleza e charme se tornam ainda mais claros.”' },
+        { src: './img/40.png', alt: 'A*M', caption: '🌟 “Toda sua essência transparece em cada detalhe, de cabelo ao sapato.”' },
+        { src: './img/41.png', alt: 'A*M', caption: '🎶 “Mesmo simples, você sempre encontra uma forma de encantar todos ao redor.”' },
+        { src: './img/42.png', alt: 'A*M', caption: '💖 “Seus olhos refletem força, doçura e tanta história linda por trás deles, mesmo estando brava”' },
+        { src: './img/43.png', alt: 'A*M', caption: '😍 “Com esse jeito único, você conquista todos, sem precisar de nada além de você mesma.”' },
+        { src: './img/44.png', alt: 'A*M', caption: '🎀 “A naturalidade e o charme de cada look mostram quem você realmente é: maravilhosa.”' },
+        { src: './img/45.png', alt: 'A*M', caption: '❤️ “E não importa onde a vida nos leve, meu lugar favorito será sempre perto de você.”' },
 
 
+      ],
+      songs: [
+        './musica1.mp3',
+        './musica2.mp3',
+        './musica3.mp3',
+        './musica4.mp3',
+        './musica5.mp3'
       ],
     };
 
@@ -526,7 +576,7 @@
     tema.style.fontSize = '1.5em';
     tema.style.fontWeight = 'bold';
     tema.style.marginBottom = '12px';
-    tema.textContent = 'Sua história da vida';
+    tema.textContent = 'Sua história de vida';
     g.appendChild(tema);
 
     data.gallery.forEach(photo => {
@@ -571,16 +621,42 @@
     // Música
     const player = document.getElementById('player');
     const playBtn = document.getElementById('playBtn');
-    player.src = data.songSrc;
+    let currentSong = 0;
+    player.src = data.songs[currentSong];
     let playing = false;
+
+    // Toca automaticamente a primeira música ao abrir o site
+    window.addEventListener('DOMContentLoaded', () => {
+      player.play().then(() => {
+        playBtn.textContent = '⏸ Pausar música';
+        playing = true;
+      }).catch(() => {
+        playBtn.textContent = '▶ Tocar música';
+        playing = false;
+      });
+    });
+
+    // Botão play/pausa
     playBtn.addEventListener('click', async () => {
       try {
-        if (!playing) { await player.play(); playBtn.textContent = '⏸ Pausar música'; }
-        else { player.pause(); playBtn.textContent = '▶ Tocar música'; }
+        if (!playing) {
+          await player.play();
+          playBtn.textContent = '⏸ Pausar música';
+        } else {
+          player.pause();
+          playBtn.textContent = '▶ Tocar música';
+        }
         playing = !playing;
       } catch (err) {
-        alert('Não consegui tocar o áudio automaticamente. Verifique o arquivo em data.songSrc.');
+        alert('Não consegui tocar o áudio automaticamente. Verifique os arquivos em data.songs.');
       }
+    });
+
+    // Quando a música acabar, toca a próxima automaticamente
+    player.addEventListener('ended', () => {
+      currentSong = (currentSong + 1) % data.songs.length;
+      player.src = data.songs[currentSong];
+      player.play();
     });
 
     // Floating hearts
