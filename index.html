@@ -390,14 +390,18 @@
     <h1>Feliz 19 anos, <span id="herName">NAME_HERE</span>! 🎂💘</h1>
     <p class="sub">Uma pequena retrospectiva dos nossos momentos — feita com todo o meu carinho, só para você.</p>
 
+    <!-- Título do cronômetro do aniversário -->
+    <h3 style="margin-top:24px;margin-bottom:8px;">Contagem para o aniversário</h3>
     <div class="countdown" id="countdown" aria-live="polite">
       <div class="tile"><strong id="days">00</strong><span>dias</span></div>
       <div class="tile"><strong id="hours">00</strong><span>horas</span></div>
       <div class="tile"><strong id="minutes">00</strong><span>min</span></div>
       <div class="tile"><strong id="seconds">00</strong><span>seg</span></div>
     </div>
-    <!-- Adicione este bloco logo abaixo do cronômetro existente -->
-    <div class="countdown" id="lifeCountdown" aria-live="polite" style="margin-top:18px;">
+
+    <!-- Título do cronômetro de vida -->
+    <h3 style="margin-top:24px;margin-bottom:8px;">Tempo de vida dela, Momentos que contam a história dela</h3>
+    <div class="countdown" id="lifeCountdown" aria-live="polite" style="margin-top:8px;">
       <div class="tile"><strong id="lifeYears">00</strong><span>anos</span></div>
       <div class="tile"><strong id="lifeMonths">00</strong><span>meses</span></div>
       <div class="tile"><strong id="lifeDays">00</strong><span>dias</span></div>
@@ -455,7 +459,7 @@
     // ======= PERSONALIZE AQUI =======
     const data = {
       herName: 'Meu Amor',
-      targetDate: '2025-08-19T00:00:00-04:00',
+      targetDate: '2025-08-19T13:00:00-04:00', // <-- ajuste aqui!
       songs: [
         './musica/musica1.mp3',
         './musica/musica2.mp3',
